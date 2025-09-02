@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+
+body {
+    background-color: rgb(255, 174, 182);
+}
+
+main {
+    width: 60%;
+    margin: 5rem auto;
+    padding: 50px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    height: 400px;
+}
+
+#output {
+    max-height: 400px;
+}
+
+.catImage {
+    max-width: 300px;
+    max-height: 100%;
+}
+
+.hidden {
+    display: none;
+}
