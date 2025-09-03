@@ -6,27 +6,33 @@ const startMenu = document.querySelector('#start')
 const outputDiv = document.querySelector('#output')
 const outputImg = document.querySelector('#outputImg')
 
+const restartBtn = document.querySelector('#restart')
+
 submitBtn.addEventListener('click', (event) => {
     const name = inputName.value
+    messageDisplay.textContent = ''
     outputDiv.classList.remove('hidden')
     startMenu.classList.add('hidden')
     renderPicture(name)
 })
 
+restartBtn.addEventListener('click', (event) => {
+    inputName.value = ''
+    outputImg.style.opacity = '0'
+    outputDiv.classList.add('hidden')
+    startMenu.classList.remove('hidden')
+})
+
 function showMessage(name) {
-    messageDisplay.textContent = 'Hello ' + name
+    messageDisplay.textContent = 'Hej igen ' + name + '!'
 }
 
 async function renderPicture(name) {
-
-
     const imgURL = await getCatPicture()
     console.log(imgURL)
-
     outputImg.style.backgroundImage = `url('${imgURL}')`
     showMessage(name)
     outputImg.style.opacity = '1'
-
 }
 
 async function getCatPicture() {
@@ -52,3 +58,5 @@ async function getCatPicture() {
         console.log(error)
     }
 }
+
+
