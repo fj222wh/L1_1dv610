@@ -24,7 +24,7 @@ restartBtn.addEventListener('click', (event) => {
 })
 
 function showMessage(name) {
-    messageDisplay.textContent = 'Hej igen ' + name + '!'
+    messageDisplay.textContent = 'Welcome back ' + name + '!'
 }
 
 async function renderPicture(name) {
