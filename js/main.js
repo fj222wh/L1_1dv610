@@ -18,20 +18,14 @@ function showMessage(name) {
 }
 
 async function renderPicture(name) {
-    // const img = document.createElement('img')
-    // img.setAttribute('alt', 'A random picture of a cat is loading...')
-    // img.setAttribute('src', '/images/loading.gif')
-    // outputDiv.appendChild(img)
 
-    // const imgURL = await getCatPicture()
-    // console.log('this is the url')
-    // console.log(imgURL)
-    // img.setAttribute('src', imgURL)
-    // img.classList.add('catImage')
 
     const imgURL = await getCatPicture()
-    outputImg.setAttribute('src', imgURL)
+    console.log(imgURL)
+
+    outputImg.style.backgroundImage = `url('${imgURL}')`
     showMessage(name)
+    outputImg.style.opacity = '1'
 
 }
 

@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: rgb(255, 174, 182);
+    background-color: rgb(201, 201, 253);
 }
 
 main {
@@ -15,17 +15,67 @@ main {
     background-color: rgb(255, 255, 255);
     border-radius: 20px;
     height: 400px;
-}
-
-#output {
-    max-height: 400px;
+    display: flex;
+    flex-direction: column;
 }
 
 .catImage {
-    max-width: 300px;
-    max-height: 100%;
+    width: 200px;
+    height: 200px;
+    border-radius: 200px;
 }
 
 .hidden {
-    display: none;
+    opacity: 0 !important;
+    pointer-events: none;
+}
+
+h1 {
+    color: rgb(134, 124, 201);
+    font-family: Arial, Helvetica, sans-serif;
+    border: dotted 5px;
+    padding: 15px 10px;
+    text-align: center;
+}
+
+#start {
+    background-color: rgb(230, 230, 230);
+    padding: 20px;
+    margin-top: 10px;
+    height: 100%;
+    transition: opacity 1s ease-in-out;
+}
+
+#start p {
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#output {
+    background-color: #b0805d;
+    padding: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+}
+
+#output span {
+    font-size: 24px;
+}
+
+#outputImg {
+    height: 200px;
+    width: 200px;
+    border-radius: 100%;
+    border: solid white 10px;
+    background-image: url('https://cdn2.thecatapi.com/images/e22.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    align-self: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
 }
