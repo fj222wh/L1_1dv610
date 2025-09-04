@@ -39,7 +39,8 @@ export async function getRandomQuote() {
 
         const data = await response.json()
     
-        const random = Math.floor(Math.random(data.length - 1))
+        const random = Math.floor(Math.random() * data.length)
+        console.log(random)
         const quote = data[random]
         return quote.quote
 
