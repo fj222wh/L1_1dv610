@@ -2,7 +2,7 @@
  * The main module.
  */
 
-import { getCatPicture } from "./fetchData.js"
+import { getCatPicture, getRandomQuote} from "./fetchData.js"
 
 const submitBtn = document.querySelector('#submitBtn')
 const messageDisplay = document.querySelector('#messageDisplay')
@@ -11,6 +11,7 @@ const startMenu = document.querySelector('#start')
 const outputDiv = document.querySelector('#output')
 const outputImg = document.querySelector('#outputImg')
 const restartBtn = document.querySelector('#restart')
+const quote = document.querySelector('#quote')
 
 submitBtn.addEventListener('click', (event) => {
     const name = inputName.value
@@ -30,13 +31,15 @@ function startApp(name) {
 }
 
 function resetApp() {
+    quote.textContent = ''
     inputName.value = ''
     outputImg.style.opacity = '0'
     outputDiv.classList.add('hidden')
     startMenu.classList.remove('hidden')
 }
 
-function showMessage(name) {
+async function showMessage(name) {
+    quote.textContent = await getRandomQuote()
     messageDisplay.textContent = 'Welcome back ' + name + '!'
 }
 

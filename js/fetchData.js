@@ -25,3 +25,25 @@ export async function getCatPicture() {
         console.log(error)
     }
 }
+
+export async function getRandomQuote() {
+    try {
+
+        const response = await fetch('../data/quotes.json', {
+            method: 'GET'
+        });
+
+        if(!response.ok) {
+            throw new Error('Something went wrong when trying to fetch the random quote')
+        }
+
+        const data = await response.json()
+    
+        const random = Math.floor(Math.random(data.length - 1))
+        const quote = data[random]
+        return quote.quote
+
+    } catch(error) {
+        console.log(error)
+    }
+}
